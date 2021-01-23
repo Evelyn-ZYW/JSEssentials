@@ -27,6 +27,7 @@ const doubledNumber = numbers.map(function (number) {
 console.log(doubledNumber)
 */
 
+/*
 function printSong(artists) {
     artists.forEach(function (artist) {
         console.log(artist.song)
@@ -67,5 +68,6 @@ const artists = [
 
 
 printSong(artists)
+*/
 
 
