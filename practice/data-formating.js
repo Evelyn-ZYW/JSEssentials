@@ -109,12 +109,31 @@ const incomingData = [
 //   },
 // ];
 
-// Answer Below
+/* SOLUTION 1 */
+
+// let outputData = incomingData.map((object) => {
+//   let totalPoint = object.items
+//     .map((item) => item.points)
+//     .reduce((a, b) => a + b, 0);
+
+//   let newItem = object.items.map((item) => {
+//     return { ...item, date: object.date };
+//   });
+
+//   return {
+//     ...object,
+//     totalPoint,
+//     items: newItem,
+//   };
+// });
+
+// console.log(outputData);
+
+/* SOLUTION 2 */
 
 let outputData = incomingData.map((object) => {
-  let totalPoint = object.items
-    .map((item) => item.points)
-    .reduce((a, b) => a + b, 0);
+  let totalPoint = 0;
+  object.items.forEach((item) => (totalPoint += item.points));
 
   let newItem = object.items.map((item) => {
     return { ...item, date: object.date };
