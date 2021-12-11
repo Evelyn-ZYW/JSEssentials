@@ -5,6 +5,7 @@
 // For example, the array ['Alf', 'Alice', 'Ben'] should be transformed to
 // { a: ['Alf', 'Alice'], b: ['Ben']}
 
+/* SOLUTION ONE */
 function myFunction(arr) {
   let output = arr.reduce((initials, name) => {
     initials[name[0]] = initials[name[0]] || [];
@@ -13,6 +14,17 @@ function myFunction(arr) {
     return initials;
   }, {});
   return output;
+}
+
+/* SOLUTION TWO */
+function myFunction(arr) {
+  let obj = {};
+  arr.forEach((item) => {
+    let lowercase = item.toLowerCase();
+    obj[lowercase[0]] = obj[lowercase[0]] || [];
+    obj[lowercase[0]].push(item);
+  });
+  return obj;
 }
 
 console.log(
