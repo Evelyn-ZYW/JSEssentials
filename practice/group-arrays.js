@@ -5,12 +5,8 @@
 // For example, the array ['Alf', 'Alice', 'Ben'] should be transformed to
 // { a: ['Alf', 'Alice'], b: ['Ben']}
 
-<<<<<<< HEAD
-let result = function myFunction(arr) {
-=======
 /* SOLUTION ONE */
 function myFunction(arr) {
->>>>>>> 7a6dc52abfc007bb524940c49cd112fd3415aa3a
   let output = arr.reduce((initials, name) => {
     initials[name[0]] = initials[name[0]] || [];
     initials[name[0]].push(name);
@@ -18,13 +14,8 @@ function myFunction(arr) {
     return initials;
   }, {});
   return output;
-};
+}
 
-<<<<<<< HEAD
-console.log(result(["Alf", "Ben", "Alice", "Brian", "Alf", "Frank", "Evelyn"]));
-
-// console.log(result(["Alf", "Alice", "Ben"]));
-=======
 /* SOLUTION TWO */
 function myFunction(arr) {
   let obj = {};
@@ -41,7 +32,6 @@ console.log(
 );
 // console.log(myFunction(["Alf", "Alice", "Ben"]));
 // myFunction([1, 2, 3]);
->>>>>>> 7a6dc52abfc007bb524940c49cd112fd3415aa3a
 // Expected
 // { a: ['Alf', 'Alice'], b: ['Ben']}
 
