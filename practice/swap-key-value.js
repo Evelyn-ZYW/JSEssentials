@@ -4,7 +4,6 @@ let newObj = {}; // should become { 1: 'a', 2: 'b' }
 
 Object.keys(oldObj).forEach((key) => {
   newObj[oldObj[key]] = key;
-  console.log(oldObj[key])
 });
 
 console.log(newObj);
