@@ -14,4 +14,4 @@ async function logger() {
   console.log("c");
 }
 
-console.log('hello', logger());
+console.log("hello", logger());
