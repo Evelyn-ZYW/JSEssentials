@@ -21,6 +21,8 @@ class User {
 }
 
 /* -------works the same as above User class------- */
+/* Note: however the methods are stored directly on the object, because we defined them directly in the constructorÎ */
+
 // function User(username, email) {
 //   this.username = username;
 //   this.email = email;
