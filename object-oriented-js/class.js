@@ -7,20 +7,44 @@ class User {
   }
   login() {
     console.log(`${this.username} just logged in.`);
-    return this
+    return this;
   }
   logout() {
     console.log(`${this.username} just logged out.`);
-    return this
+    return this;
   }
-  incScore(){
+  incScore() {
     this.score += 1;
-    console.log(`${this.username} has a score of ${this.score}`)
-    return this
+    console.log(`${this.username} has a score of ${this.score}`);
+    return this;
   }
 }
 
+/* -------works the same as above User class------- */
+// function User(username, email) {
+//   this.username = username;
+//   this.email = email;
+//   this.score = 0;
+//   this.login = function () {
+//     console.log(`${this.username} just logged in.`);
+//     return this;
+//   };
+//   this.logout = function () {
+//     console.log(`${this.username} just logged out.`);
+//     return this;
+//   };
+//   this.incScore = function () {
+//     this.score += 1;
+//     console.log(`${this.username} has a score of ${this.score}`);
+//     return this;
+//   };
+// }
+
 class Admin extends User {
+  constructor(username, email, title) {
+    super(username, email);
+    this.title = title;
+  }
   deleteUser(user) {
     users = users.filter((u) => {
       return u.username !== user.username;
@@ -29,13 +53,14 @@ class Admin extends User {
 }
 const userOne = new User("evelyn", "evelyn@email.com");
 const userTwo = new User("frank", "frank@email.com");
-const userThree = new Admin("gougou", "gougou@email.com");
+const userThree = new Admin("gougou", "gougou@email.com", "ssb");
 
 let users = [userOne, userTwo, userThree];
 
-// console.log(userOne, userTwo, userThree);
-// userOne.logout();
-userOne.login().incScore().logout()
+console.log(userThree);
 
-userThree.deleteUser(userOne);
-console.log(users);
+// userOne.logout();
+// userOne.login().incScore().incScore().logout();
+
+// userThree.deleteUser(userOne);
+// console.log(users);
