@@ -6,27 +6,27 @@
 // { a: ['Alf', 'Alice'], b: ['Ben']}
 
 /* SOLUTION ONE */
-// function myFunction(arr) {
-//   let output = arr.reduce((initials, name) => {
-//     initials[name[0]] = initials[name[0]] || [];
-//     initials[name[0]].push(name);
-//     console.log("hello", initials);
-//     return initials;
-//   }, {});
-//   return output;
-// }
+function myFunction(arr) {
+  let output = arr.reduce((object, name) => {
+    object[name[0]] = object[name[0]] || [];
+    object[name[0]].push(name);
+    console.log("hello", object);
+    return object;
+  }, {});
+  return output;
+}
 
 /* SOLUTION TWO */
-function myFunction(arr) {
-  let obj = {};
-  arr.forEach((item) => {
-    let lowercase = item.toLowerCase();
-    obj[lowercase[0]] = obj[lowercase[0]] || [];
-    obj[lowercase[0]].push(item);
-    console.log(obj)
-  });
-  return obj;
-}
+// function myFunction(arr) {
+//   let obj = {};
+//   arr.forEach((item) => {
+//     let lowercase = item.toLowerCase();
+//     obj[lowercase[0]] = obj[lowercase[0]] || [];
+//     obj[lowercase[0]].push(item);
+//     console.log(obj)
+//   });
+//   return obj;
+// }
 
 
 console.log(
