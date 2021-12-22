@@ -3,9 +3,18 @@
 // If not, append it to the end
 // Return the concatenation
 
-function myFunction() {
+function myFunction(a, b) {
+    let arrA = [...a]
 
-    return
+    let result = ''
+    arrA.forEach(letter => {
+        if(letter === b){
+            result = b.concat(a)
+        } else {
+            result = a.concat(b)
+        }
+    })
+    return result
  }
 
 
