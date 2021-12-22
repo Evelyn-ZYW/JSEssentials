@@ -4,32 +4,29 @@
 // Return the concatenation
 
 function myFunction(a, b) {
-    let arrA = [...a]
+  let arrA = [...a];
 
-    let result = ''
-    arrA.forEach(letter => {
-        if(letter === b){
-            result = b.concat(a)
-        } else {
-            result = a.concat(b)
-        }
-    })
-    return result
- }
+  let result = a + b;
+  arrA.forEach((letter) => {
+    if (b === letter) {
+      result = b + a;
+    }
+  });
+  return result;
+}
 
-
-console.log(myFunction('cheese', 'cake'))
+console.log(myFunction("cheese", "cake"));
 // Expected
 // 'cheesecake'
 
-console.log(myFunction('lips', 's'))
+console.log(myFunction("lips", "s"));
 // Expected
 // 'slips'
 
-console.log(myFunction('Java', 'script'))
+console.log(myFunction("Java", "script"));
 // Expected
 // 'Javascript'
 
-console.log(myFunction(' think, therefore I am', 'I'))
+console.log(myFunction(" think, therefore I am", "I"));
 // Expected
 // 'I think, therefore I am'
