@@ -1,7 +1,9 @@
 // Create a function that takes an array of non-negative integers and strings and return a new array without the strings.
 
 function filterArray(arr) {
+  /* solution 1 */
   // arr = arr.filter(item => Number.isInteger(item))
+  /* solution 2 */
   arr = arr.filter((item) => typeof item !== "string");
   return arr;
 }
