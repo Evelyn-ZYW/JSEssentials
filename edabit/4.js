@@ -1,9 +1,14 @@
 // Take an array of integers (positive or negative or both) and return the sum of the absolute value of each element.
 
-function getAbsSum(arr) {
-  return arr.map((num) => Math.abs(num)).reduce((a, b) => a + b);
-}
+/* SOLUTION ONE */
+// function getAbsSum(arr) {
+//   return arr.map((num) => Math.abs(num)).reduce((a, b) => a + b);
+// }
 
+/* SOLUTION TWO */
+function getAbsSum(arr) {
+  return arr.reduce((prev, num) => prev + Math.abs(num), 0);
+}
 console.log(getAbsSum([2, -1, 4, 8, 10]));
 //  ➞ 25
 
