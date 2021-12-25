@@ -9,12 +9,25 @@
 // }
 
 /* SOLUTION TWO */
+// function formatPhoneNumber(numbers) {
+//   numbers = numbers.join("");
+//   let one = numbers.slice(0, 3);
+//   let two = numbers.slice(3, 6);
+//   let three = numbers.slice(6);
+//   return `(${one}) ${two}-${three}`;
+// }
+
+/* SOLUTION THREE */
+// function formatPhoneNumber(numbers) {
+//   let str = numbers.join("");
+//   return `(${str.slice(0, 3)}) ${str.slice(3, 6)}-${str.slice(6)}`;
+// }
+
+/* SOLUTION FOUR */
 function formatPhoneNumber(numbers) {
-  numbers = numbers.join("");
-  let one = numbers.slice(0, 3);
-  let two = numbers.slice(3, 6);
-  let three = numbers.slice(6);
-  return `(${one}) ${two}-${three}`;
+  let template = "(XXX) XXX-XXXX".split("");
+  numbers.forEach((num) => (template[template.indexOf("X")] = num));
+  return template.join("");
 }
 
 console.log(formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
