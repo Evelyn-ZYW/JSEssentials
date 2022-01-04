@@ -126,7 +126,6 @@ const incomingData = [
 //     items: newItem,
 //   };
 // });
-
 // console.log(outputData);
 
 /* SOLUTION 2 */
@@ -145,6 +144,7 @@ const incomingData = [
 //     items: newItem,
 //   };
 // });
+// console.log(outputData);
 
 /* SOLUTION 3 */
 
@@ -158,20 +158,27 @@ const incomingData = [
 
 //   return { ...obj, items: newItems, total };
 // });
-
 // console.log(outputData);
 
 /* SOLUTION 4 */
 
-const output = incomingData.map(obj => {
-  let total = 0
-  obj.items.forEach(item => {
-    total += item.points
-  })
-  let newItems = obj.items.map(item => {
-    return {...item, date: obj.date}
-  })
-  return {...obj, totalPoints: total, items: newItems}
-})
+// const output = incomingData.map(obj => {
+//   let total = 0
+//   obj.items.forEach(item => {
+//     total += item.points
+//   })
+//   let newItems = obj.items.map(item => {
+//     return {...item, date: obj.date}
+//   })
+//   return {...obj, totalPoints: total, items: newItems}
+// })
+// console.log(output)
 
-console.log(output)
+/* SOLUTION 5 */
+
+const output = incomingData.map((obj) => ({
+  ...obj,
+  totalPoint: obj.items.reduce((ac, b) => ac + b.points, 0),
+  items: obj.items.map((o) => ({ ...o, date: obj.date })),
+}));
+console.log(output);
